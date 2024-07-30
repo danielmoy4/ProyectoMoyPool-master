@@ -1,0 +1,19 @@
+{% extends "./index.html" %}
+
+{% block Titulo %}
+    Resultado de la Búsqueda
+{% endblock Titulo %}
+
+{% block Formulario %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Detalles del Cliente</h3>
+                <p><strong>Nombre:</strong> {{ cliente.nombre }}</p>
+                <p><strong>Apellido:</strong> {{ cliente.apellido }}</p>
+                <p><strong>Email:</strong> {{ cliente.email }}</p>
+                <!-- Agrega más campos si es necesario -->
+            </div>
+        </div>
+    </div>
+{% endblock Formulario %}

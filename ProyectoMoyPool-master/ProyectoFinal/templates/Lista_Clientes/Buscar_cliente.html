@@ -1,0 +1,29 @@
+{% extends "./index.html" %}
+
+{% block Titulo %}
+    Buscar Cliente
+{% endblock Titulo %}
+
+{% block Formulario %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="email" class="form-label">{{ form.email.label_tag }}</label>
+                        {{ form.email }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </form>
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger mt-3">
+                        {% for error in form.non_field_errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock Formulario %}

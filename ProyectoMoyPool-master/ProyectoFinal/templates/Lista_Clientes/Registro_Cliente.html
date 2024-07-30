@@ -1,0 +1,53 @@
+{% extends "./index.html" %}
+{% block Titulo %}
+Registro
+{% endblock Titulo %}
+{% block Formulario %}
+<form method="post" action="{% url 'registro_cliente' %}">
+    {% csrf_token %}
+    <!-- Email input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+	    {{ form.email.label_tag }}</label>
+        {{ form.email }}
+        <div id="email" class="form-text"></div>
+    </div>
+  
+    <!-- Password input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        {{ form.nombre.label_tag }}
+        {{ form.nombre }}
+    <div id="nombre" class="form-text"></div>
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+        {{ form.apellido.label_tag }}
+        {{ form.apellido }}
+    <div id="apellido" class="form-text"></div>
+    </div>
+  
+    <!-- Registar boton-->
+    <button type="submit" class="btn btn-primary">Registrarse</button>
+  
+    <!-- Register sociales buttons -->
+    <div class="text-center">
+      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+  
+      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-google"></i>
+      </button>
+  
+      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-twitter"></i>
+      </button>
+  
+      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-github"></i>
+      </button>
+    </div>
+  </form>
+{% endblock Formulario %}
+
+
+
